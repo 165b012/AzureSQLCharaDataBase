@@ -1,0 +1,46 @@
+﻿@model CharaDataBaseProject.Models.CharaName
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CharaName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+
+    <table class="table">
+        <tr>
+            <th>
+                Course Title
+            </th>
+        </tr>
+
+        @foreach (var item in Model.skill)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.)
+                </td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CharaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

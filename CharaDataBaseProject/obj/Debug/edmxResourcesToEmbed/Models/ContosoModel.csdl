@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ContosoUniversityDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CharaName">
+    <Key>
+      <PropertyRef Name="CharaID" />
+    </Key>
+    <Property Name="CharaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HP" Type="Int32" Nullable="false" />
+    <Property Name="MP" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ContosoUniversityDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CharaName" EntityType="Self.CharaName" />
+    <EntitySet Name="Skill" EntityType="Self.Skill" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+  </EntityContainer>
+</Schema>
